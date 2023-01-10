@@ -1,0 +1,30 @@
+<h1 mat-dialog-titl style="font-size: 25px;"e>Create new device</h1>
+<div mat-dialog-content>
+    <form [formGroup] = "createDeviceForm"  >
+        <mat-form-field appearence="outline">
+            <mat-label>Address</mat-label>
+            <input formControlName = "address" matInput placeholder="address">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input formControlName = "description" matInput placeholder="description">
+    
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Max hourly energy consumption</mat-label>
+            <input formControlName = "maxHourlyEnergyCons" matInput placeholder="maxHourlyEnergyCons">
+    
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+
+    <button mat-raised-button (click) = "createDeviceMethod()">Save</button>
+
+</div>
+
+<button (click)="onCloseClick()">Close</button>

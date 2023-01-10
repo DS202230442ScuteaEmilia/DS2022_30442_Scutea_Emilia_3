@@ -1,0 +1,89 @@
+<h3 class="mt-3 mb-3">My devices</h3>
+
+<alert></alert>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Device ID</th>
+            <th>Address</th>
+            <th>Description</th>
+            <th>Assigned to user</th>
+            <th>Max hourly energy consumption</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let device of devices">
+            <td>{{ device.id }}</td>
+            <td>{{ device.address }}</td>
+            <td>{{ device.description }}</td>
+            <td>{{ device.user_id }}</td>
+            <td>{{ device.maxHourlyEnergyCons }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<h3 class="mt-3 mb-3">Consumption</h3>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Device ID</th>
+            <th>Timestamp</th>
+            <th>Consumption</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cons of consumptions">
+            <td>{{ cons.id }}</td>
+            <td>{{ cons.device_id }}</td>
+            <td>{{ cons.timestamp }}</td>
+            <td>{{ cons.consumption }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Charts</h3>
+<p>Select the date to display the chart</p>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker1"  [(ngModel)]="date">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Select device</mat-label>
+          <select matNativeControl [(ngModel)]="selectedDevice" name="device">
+            <option value="" selected></option>
+            <option *ngFor="let device of devices" [value]="device.id">
+              {{ device.id }}
+            </option>
+          </select>
+        </mat-form-field>
+
+
+  
+<button (click)="searchConsumptionByDate()">Select</button>
+
+<div class="chart-container">
+    <canvas  id="MyChart" >{{ myChart }}</canvas>
+</div>
+
+
+
+<div class="grafico">
+    <div class="content">
+        <div class="bars" *ngFor="let item of values">
+            <span>{{item.value}}</span>
+            <div class="bar" [style.background-color]="'#498B94'" [style.height]="item.size"></div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="legends">
+        <span *ngFor="let item of values">{{item.legend}}</span>
+    </div>
+</div>

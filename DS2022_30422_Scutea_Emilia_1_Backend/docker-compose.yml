@@ -1,0 +1,48 @@
+version: "3"
+services:
+  mysqldb:
+    image: mysql-energy
+    environment:
+      MYSQL_DATABASE: ds_assignment1
+      MYSQL_ROOT_PASSWORD: root
+    container_name: mysqldb
+    ports:
+      - 3307:3306
+    networks:
+      - DS_SQL_SPRING
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --default-week-format=1
+
+  backend:
+    image: backend-energy
+    depends_on:
+      - mysqldb
+    restart: on-failure
+    ports:
+      - 8088:8088
+    networks:
+      - DS_SQL_SPRING
+    environment:
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/ds_assignment1?serverTimezone=UTC&enabledTLSProtocols=TLSv1.2
+
+
+  frontend:
+    image: frontend-energy
+    container_name: frontend-energy
+    ports:
+      - 4200:4200
+    networks:
+      - DS_SQL_SPRING
+
+  envoy:
+    image: envoyproxy/envoy-dev:b145180d17cac80aa5f9a7801429d52017fea6d1
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+    ports:
+      - "8080:8080"
+      - "9091:9090"
+
+networks:
+  DS_SQL_SPRING:
+    driver: bridge

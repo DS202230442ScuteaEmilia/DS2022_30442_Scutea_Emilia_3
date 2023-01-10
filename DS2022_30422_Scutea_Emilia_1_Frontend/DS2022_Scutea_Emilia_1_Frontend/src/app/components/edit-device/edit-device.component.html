@@ -1,0 +1,30 @@
+<h1 mat-dialog-title style="font-size: 25px;">Edit device</h1>
+<div mat-dialog-content>
+    <form [formGroup] = "editDeviceForm"  >
+       <mat-form-field appearance="outline">
+        <mat-label>Edit device with id</mat-label>
+        <input formControlName = "id" matInput placeholder="id"  [(ngModel)]="data.id" [readonly]="true" [disabled]="true">
+       </mat-form-field>
+
+        <mat-form-field appearence="outline">
+            <mat-label>Address</mat-label>
+            <input formControlName = "address" matInput placeholder="address"  [(ngModel)]="data.address">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input formControlName = "description" matInput placeholder="description" [(ngModel)]="data.description">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+
+    <button mat-raised-button (click) = "editDeviceMethod()">Edit</button>
+
+</div>
+
+
+<button (click)="onCloseClick()">Close</button>
+

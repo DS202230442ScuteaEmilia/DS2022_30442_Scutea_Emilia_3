@@ -1,0 +1,62 @@
+<h1 class="mt-3 mb-3">Device List</h1>
+
+
+<button (click)="createDeviceDialog()">Create Device</button>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>id</th>
+            <th>address</th>
+            <th>description</th>
+            <th>assigned to user</th>
+            <th>max hourly energy consumption</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let device of devices">
+            <td>{{ device.id }}</td>
+            <td>{{ device.address }}</td>
+            <td>{{ device.description }}</td>
+            <ng-template [ngIf]="device.user_id === 0" [ngIfElse]="deviceAssigned">
+                <td>none</td>   
+            </ng-template>
+            <ng-template #deviceAssigned>
+                <td>{{ device.user_id }}</td>
+            </ng-template>
+            <td> {{ device.maxHourlyEnergyCons }}</td>
+            <button (click)="editDeviceDialog(device)">Edit</button>
+            <button (click)="deleteDevice(device)">Delete</button>
+        </tr>
+    </tbody>
+</table>
+
+<h1 class="mt-3 mb-3">Assign device to user</h1>
+
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Select user</mat-label>
+    <select matNativeControl [(ngModel)]="selectedUser" name="user">
+      <option value="" selected></option>
+      <option *ngFor="let user of users" [value]="user.id">
+        {{ user.id }} {{ user.username}}
+      </option>
+    </select>
+  </mat-form-field>
+</form>
+
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Select device</mat-label>
+    <select matNativeControl [(ngModel)]="selectedDevice" name="device">
+      <option value="" selected></option>
+      <option *ngFor="let device of devices" [value]="device.id">
+        {{ device.id }}, {{ device.description }}, {{ device.address }}
+      </option>
+    </select>
+  </mat-form-field>
+</form>
+
+<button (click)="assignDeviceToUser()">Assign</button>
+

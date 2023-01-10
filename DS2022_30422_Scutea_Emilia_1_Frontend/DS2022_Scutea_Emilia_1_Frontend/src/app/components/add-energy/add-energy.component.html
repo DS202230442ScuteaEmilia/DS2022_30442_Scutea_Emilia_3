@@ -1,0 +1,25 @@
+<h1 mat-dialog-title style="font-size: 25px;">Add energy consumption</h1>
+<div mat-dialog-content>
+    <form [formGroup] = "addEnergyForm"  >
+       <mat-form-field appearance="outline">
+        <mat-label>Add energy to device with id</mat-label>
+        <input formControlName = "id" matInput placeholder="id"  [(ngModel)]="data.id" [readonly]="true" [disabled]="true">
+       </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Energy</mat-label>
+            <input formControlName = "energy" matInput placeholder="energy" [(ngModel)]="data.energy">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+
+    <button mat-raised-button (click) = "addEnergyMethod()">Add</button>
+
+</div>
+
+
+<button (click)="onCloseClick()">Close</button>
+

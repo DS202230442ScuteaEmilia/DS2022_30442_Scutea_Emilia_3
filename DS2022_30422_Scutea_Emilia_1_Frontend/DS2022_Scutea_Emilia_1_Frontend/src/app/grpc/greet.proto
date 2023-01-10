@@ -1,0 +1,30 @@
+syntax="proto3";// syntax of the proto file (current version is 3)
+package grpc; // package where we will generate the file
+
+option java_multiple_files = true; // use multiple file for each object instead of one big file
+
+message Greeting{
+   string from = 1;
+   string to = 2;
+   string message = 3;
+}
+
+message GreetRequest{
+   Greeting greeting = 1;
+}
+
+message GreetResponse{
+   string result = 1;
+}
+
+message Messages {
+  repeated Greeting messages = 1;
+}
+
+message Empty {}
+
+service GreetService{
+  rpc Greet(GreetRequest) returns (GreetResponse){};
+  rpc SendMessage(Greeting) returns (Empty) {}
+  rpc GetMessages(Empty) returns (Messages) {}
+}

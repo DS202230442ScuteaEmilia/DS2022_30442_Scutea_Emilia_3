@@ -1,0 +1,38 @@
+    <div class="chat_title">
+      Chat
+    </div>
+    <div *ngIf="!isAdmin == true; else admin">
+      <!-- <select matNativeControl [(ngModel)]="selectedUser" name="user">
+        <option value="" selected></option>
+        <option *ngFor="let user of users" [value]="user.username">
+          {{ user.username }}
+        </option>
+      </select> -->
+    </div>
+      
+      <ng-template #admin>
+        <div>
+          <mat-label>Select user</mat-label>
+          <select matNativeControl [(ngModel)]="selectedUser" name="user">
+            <option value="" selected></option>
+            <option *ngFor="let user of users" [value]="user.id">
+              {{user.id}} {{ user.username }}
+            </option>
+          </select>
+  
+          <button (click)="startChat()">Start chatting</button>
+        </div>
+        
+
+      </ng-template>
+
+    <div class="messages_div">
+      <app-message *ngFor="let message of messages" [currentUser]="currentUser" [otherUser]="otherUser_name" [message]="message"></app-message>
+    </div>
+  
+    <form (submit)="handleSubmit($event)">
+      <div class="form-group mb-3">
+        <input type="text" class="form-control" placeholder="message">
+      </div>
+      <button class="btn btn-primary" type="submit">Send</button>
+    </form>

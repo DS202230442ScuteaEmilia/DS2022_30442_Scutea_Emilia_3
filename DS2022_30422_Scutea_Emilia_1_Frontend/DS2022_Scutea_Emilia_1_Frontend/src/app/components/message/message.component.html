@@ -1,0 +1,14 @@
+<div>
+      <ng-container *ngIf="currentUser.id == message.from; else elseBlock">
+      <div [ngStyle]="{ backgroundColor: '#abd9e9', textAlign: 'end' }">
+        <h4 [ngStyle]="{ fontSize: '12px', paddingRight: '5px' }"> {{currentUser.username}}</h4>
+        <h3 [ngStyle]="{ fontSize: '22px', paddingRight: '10px' }">{{message.message}} </h3>
+      </div>
+    </ng-container>
+    <ng-template #elseBlock>
+      <div [ngStyle]="{ backgroundColor: '#eff3f7' }">       
+        <h4 [ngStyle]="{ fontSize: '12px', paddingLeft: '5px' }"> {{ otherUser }}</h4>
+        <h3 [ngStyle]="{ fontSize: '22px', paddingLeft: '10px' }"> {{message.message}}</h3>
+      </div>
+    </ng-template>
+</div>

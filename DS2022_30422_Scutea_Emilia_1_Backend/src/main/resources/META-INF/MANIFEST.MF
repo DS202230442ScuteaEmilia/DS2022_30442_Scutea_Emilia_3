@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+Main-Class: 
+Class-Path: spring-boot-starter-data-jpa-2.7.1.jar jakarta.annotation-ap
+ i-1.3.5.jar jackson-datatype-jsr310-2.13.3.jar jjwt-jackson-0.11.1.jar 
+ gson-2.9.0.jar istack-commons-runtime-3.0.12.jar log4j-api-2.17.2.jar k
+ otlin-stdlib-common-1.6.21.jar spring-boot-starter-2.7.1.jar spring-boo
+ t-starter-json-2.7.1.jar aspectjweaver-1.9.7.jar tomcat-embed-core-9.0.
+ 64.jar jaxb-runtime-2.3.6.jar spring-boot-starter-jdbc-2.7.1.jar kotlin
+ -stdlib-jdk7-1.6.21.jar spring-boot-starter-logging-2.7.1.jar spring-da
+ ta-commons-2.7.1.jar spring-security-config-5.7.2.jar log4j-to-slf4j-2.
+ 17.2.jar spring-webmvc-5.3.21.jar spring-expression-5.3.21.jar kotlin-s
+ tdlib-jdk8-1.6.21.jar spring-boot-starter-aop-2.7.1.jar mapstruct-1.5.2
+ .Final.jar spring-data-jpa-2.7.1.jar mysql-connector-java-8.0.29.jar jj
+ wt-0.9.1.jar jakarta.activation-1.2.2.jar jjwt-api-0.11.5.jar jackson-a
+ nnotations-2.13.3.jar kotlin-stdlib-1.6.21.jar spring-tx-5.3.21.jar spr
+ ing-aop-5.3.21.jar spring-context-5.3.21.jar txw2-2.3.6.jar spring-aspe
+ cts-5.3.21.jar HikariCP-4.0.3.jar spring-security-web-5.7.2.jar classma
+ te-1.5.1.jar logback-classic-1.2.11.jar mapstruct-processor-1.5.2.Final
+ .jar jackson-databind-2.13.3.jar jjwt-impl-0.11.5.jar spring-beans-5.3.
+ 21.jar spring-boot-starter-security-2.3.9.RELEASE.jar spring-security-c
+ rypto-5.7.2.jar pw-iso20022-SRU2021-9.2.6.jar okio-jvm-3.2.0.jar okio-1
+ .6.0.jar jakarta.xml.bind-api-2.3.3.jar snakeyaml-1.30.jar okhttp-5.0.0
+ -alpha.10.jar annotations-13.0.jar hsqldb-2.2.9.jar spring-security-cor
+ e-5.7.2.jar spring-core-5.3.21.jar spring-web-5.3.21.jar jul-to-slf4j-1
+ .7.36.jar jboss-logging-3.4.3.Final.jar spring-boot-autoconfigure-2.7.1
+ .jar jakarta.transaction-api-1.3.3.jar antlr-2.7.7.jar spring-boot-star
+ ter-web-2.7.1.jar jackson-datatype-jdk8-2.13.3.jar validation-api-2.0.1
+ .Final.jar logback-core-1.2.11.jar okhttp-jvm-5.0.0-alpha.10.jar spring
+ -jdbc-5.3.21.jar tomcat-embed-el-9.0.64.jar tomcat-embed-websocket-9.0.
+ 64.jar pw-swift-core-SRU2021-9.2.12.jar iban4j-3.2.3-RELEASE.jar byte-b
+ uddy-1.12.11.jar javax.activation-api-1.2.0.jar hibernate-core-5.6.9.Fi
+ nal.jar commons-lang3-3.12.0.jar jandex-2.4.2.Final.jar jaxb-api-2.3.1.
+ jar okhttp-2.7.5.jar slf4j-api-1.7.36.jar jackson-module-parameter-name
+ s-2.13.3.jar spring-boot-2.7.1.jar spring-boot-starter-tomcat-2.7.1.jar
+  jakarta.activation-api-1.2.2.jar jackson-core-2.13.3.jar hibernate-com
+ mons-annotations-5.1.2.Final.jar spring-jcl-5.3.21.jar jakarta.persiste
+ nce-api-2.2.3.jar spring-orm-5.3.21.jar
+
